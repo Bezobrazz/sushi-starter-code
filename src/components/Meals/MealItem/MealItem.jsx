@@ -1,15 +1,18 @@
 import styles from "./MealItem.module.css";
+import MealItemForm from "./MealItemForm";
 
 const MealItem = (props) => {
   const formatedPrice = `$${props.price.toFixed(2)}`;
   return (
-    <li>
-      <div className={styles.meal}>
+    <li className={styles.meal}>
+      <div>
         <h3>{props.name}</h3>
         <div className={styles.description}>{props.description}</div>
         <div className={styles.price}>{formatedPrice}</div>
       </div>
-      <div>{/* <button className={styles.button}>+</button> */}</div>
+      <div>
+        <MealItemForm></MealItemForm>
+      </div>
     </li>
   );
 };
